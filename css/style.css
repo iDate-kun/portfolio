@@ -166,6 +166,7 @@ h2 {
     padding: 2rem;
     transition: transform 0.3s, box-shadow 0.3s;
     transform-style: preserve-3d;
+    cursor: pointer; /* Add pointer cursor to clickable cards */
 }
 
 .card:hover {
@@ -317,19 +318,19 @@ body.light-mode {
     }
 }
 
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.card-link .project-link {
+.button-link {
     display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
     margin-top: 1rem;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
 }
 
-.card-link:hover .project-link {
-    color: var(--secondary-color);
-    text-shadow: 0 0 5px var(--secondary-color);
+.button-link:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 10px var(--primary-color);
 }
