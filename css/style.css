@@ -316,3 +316,20 @@ body.light-mode {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 }
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.card-link:hover .project-link {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color);
+}
