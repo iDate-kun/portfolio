@@ -64,6 +64,11 @@ nav {
     text-shadow: 0 0 5px var(--primary-color);
 }
 
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -270,6 +275,10 @@ body.light-mode {
 
 /* Responsive */
 @media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
     .nav-links {
         position: absolute;
         right: 0;
@@ -286,6 +295,8 @@ body.light-mode {
 
     .nav-links li {
         opacity: 0;
+        margin-left: 0;
+        padding: 1rem 0;
     }
 
     .burger {
@@ -315,6 +326,34 @@ body.light-mode {
     }
     .toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    #theme-toggle {
+        margin-right: 50px;
     }
 }
 
