@@ -334,3 +334,68 @@ body.light-mode {
     color: var(--background-color);
     box-shadow: 0 0 10px var(--primary-color);
 }
+
+/* Project Detail Page Styles */
+.project-detail-page {
+    padding: 8rem 2rem 2rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-detail-page section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.project-detail-page #project-hero {
+    border-top: none;
+    text-align: center;
+    padding-top: 0;
+}
+
+.project-detail-page h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    text-align: center;
+}
+
+.project-detail-page .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.screenshot-placeholder {
+    border: 2px dashed var(--primary-color);
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    max-width: 80%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.project-detail-page .notice {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.project-detail-page h2 {
+   text-align: left;
+   font-size: 2rem;
+}
+
+.project-detail-page ul, .project-detail-page ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-detail-page ul li, .project-detail-page ol li {
+    background: rgba(10, 10, 10, 0.5);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--secondary-color);
+    border-radius: 0 5px 5px 0;
+}

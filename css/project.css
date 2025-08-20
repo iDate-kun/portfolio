@@ -1,0 +1,78 @@
+.project-container {
+    padding: 6rem 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.project-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.tech-tags {
+    margin-bottom: 2rem;
+}
+
+.tech-tags .tag {
+    background: var(--secondary-color);
+    color: var(--background-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.project-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-link a:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.project-container h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px var(--secondary-color);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.project-container ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.project-container ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-container ul li::before {
+    content: '▶';
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
