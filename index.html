@@ -3,137 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iDate-kun - Cybercore Portfolio</title>
+    <title>iDate-kun - RimWorld Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rimworld.css">
     <link rel="icon" href="img/icon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="loader">
-        <div class="loader-text">LOADING...</div>
-    </div>
-
     <header>
+        <div class="logo"><h1>iDate-kun's Colony</h1></div>
         <nav>
-            <div class="logo">iDate-kun</div>
-            <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
+            <ul>
                 <li><a href="#profile">Profile</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="theme-toggle">Toggle Theme</button>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <h1 class="glitch" data-text="iDate-kun">iDate-kun</h1>
-                <p>AI × Techで未来を創る</p>
-                <span id="typed"></span>
-                <a href="#projects" class="cta-button">作品を見る</a>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-cards">
-                <div class="card" onclick="window.location.href='portfolio.html'">
-                    <div class="card-content">
-                        <h3>Portfolio Site</h3>
-                        <p>自身のスキルと制作物を紹介するために作成したポートフォリオサイトです。</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+    <div class="container">
+        <main>
+            <section id="profile" class="main-content">
+                <div class="profile-grid">
+                    <!-- Left Panel -->
+                    <div class="panel">
+                        <h2>外観・基本情報</h2>
+                        <div style="display: grid; grid-template-columns: 140px 1fr; gap: 1rem;">
+                            <div class="avatar-box">
+                                <div class="avatar-placeholder">🧑‍🚀</div>
+                                <div class="avatar-caption">アバター</div>
+                            </div>
+                            <div>
+                                <div class="labeled-input">
+                                    <label>姓</label>
+                                    <input type="text" value="iDate" readonly>
+                                </div>
+                                <div class="labeled-input">
+                                    <label>名</label>
+                                    <input type="text" value="kun" readonly>
+                                </div>
+                                <div class="labeled-input">
+                                    <label>あだ名</label>
+                                    <input type="text" value="Date" readonly>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://github.com/iDate-kun/portfolio" class="button-link" target="_blank">GitHub</a>
+                    </div>
+
+                    <!-- Center Panel -->
+                    <div class="panel">
+                        <h2>生い立ち / 才能・性格</h2>
+                        <div class="labeled-input">
+                            <label>幼少期</label>
+                            <input type="text" value="Urbworldのガキ" readonly>
+                        </div>
+                        <div class="labeled-input">
+                            <label>成人期</label>
+                            <input type="text" value="ハーブ栽培家" readonly>
+                        </div>
+                         <div class="labeled-input">
+                            <label>才能・性格</label>
+                            <input type="text" value="勤勉家, 良識の欠損" readonly>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel -->
+                    <div class="panel">
+                        <h2>スキル</h2>
+                        <div class="skill-row">
+                            <span class="name">射撃</span>
+                            <input type="range" min="0" max="20" value="3" style="background: linear-gradient(90deg, var(--accent-soft) 15%, var(--border) 15%);">
+                            <span class="level">3</span>
+                            <button class="passion p-1">🔥</button>
+                        </div>
+                        <div class="skill-row">
+                            <span class="name">格闘</span>
+                            <input type="range" min="0" max="20" value="0" style="background: linear-gradient(90deg, var(--accent-soft) 0%, var(--border) 0%);">
+                            <span class="level">0</span>
+                            <button class="passion p-0">—</button>
+                        </div>
+                        <div class="skill-row">
+                            <span class="name">建築</span>
+                            <input type="range" min="0" max="20" value="12" style="background: linear-gradient(90deg, var(--accent-soft) 60%, var(--border) 60%);">
+                            <span class="level">12</span>
+                            <button class="passion p-2">🔥🔥</button>
+                        </div>
+                        <div class="skill-row">
+                            <span class="name">工芸</span>
+                            <input type="range" min="0" max="20" value="18" style="background: linear-gradient(90deg, var(--accent-soft) 90%, var(--border) 90%);">
+                            <span class="level">18</span>
+                            <button class="passion p-2">🔥🔥</button>
+                        </div>
+                        <div class="skill-row">
+                            <span class="name">研究</span>
+                            <input type="range" min="0" max="20" value="16" style="background: linear-gradient(90deg, var(--accent-soft) 80%, var(--border) 80%);">
+                            <span class="level">16</span>
+                            <button class="passion p-1">🔥</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card" onclick="window.location.href='VSP.html'">
-                    <div class="card-content">
-                        <h3>VOICEVOXセリフプレイヤー</h3>
-                        <p>VOICEVOXの非公式の拡張機能です。同じセリフを違うキャラで一気に生成できます。</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Node.js</span>
-                            <span>electron</span>
+            </section>
+
+            <section id="projects" class="main-content panel">
+                <h2>Projects</h2>
+                <div class="project-cards">
+                    <div class="card" onclick="window.location.href='portfolio.html'">
+                        <div class="card-content">
+                            <h3>Portfolio Site</h3>
+                            <p>この拠点に関する情報をまとめたサイト。</p>
+                            <a href="https://github.com/iDate-kun/portfolio" class="button-link" target="_blank">設計図 (GitHub)</a>
                         </div>
-                        <a href="https://github.com/iDate-kun/voicevox-serifu-player" class="button-link" target="_blank">GitHub</a>
+                    </div>
+                    <div class="card" onclick="window.location.href='VSP.html'">
+                        <div class="card-content">
+                            <h3>VOICEVOXセリフプレイヤー</h3>
+                            <p>VOICEVOX用の通信装置。異なるキャラクターの声で一斉に通信できる。</p>
+                            <a href="https://github.com/iDate-kun/voicevox-serifu-player" class="button-link" target="_blank" onclick="event.stopPropagation()">設計図 (GitHub)</a>
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="card">
-                    <div class="card-content">
-                        <h3>Project Title 2</h3>
-                        <p>プロジェクトの簡単な説明を50字程度で記述します。</p>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>API</span>
-                        </div>
-                        <a href="#" class="project-link" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="card">
-                  <div class="card-content">
-                      <h3>Project Title 3</h3>
-                      <p>プロジェクトの簡単な説明を50字程度で記述します。</p>
-                      <div class="tags">
-                          <span>Python</span>
-                          <span>Flask</span>
-                      </div>
-                      <a href="#" class="project-link" target="_blank">GitHub</a>
-                  </div> -->
-              </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="profile">
-            <h2>Profile</h2>
-            <div class="profile-content">
-                <div class="profile-item">
-                    <!-- <h3>経歴</h3>
-                    <p><br></p> -->
+            <section id="contact" class="main-content panel">
+                <h2>Contact</h2>
+                <div class="contact-links">
+                    <a href="https://github.com/iDate-kun/" target="_blank">通信コンソール (GitHub)</a>
                 </div>
-                <div class="profile-item">
-                    <h3>スキル</h3>
-                    <p>HTML, CSS, JavaScript, React, Python, etc.</p>
-                </div>
-                <div class="profile-item">
-                    <h3>資格</h3>
-                    <p>基本情報技術者試験</p>
-                </div>
-                <div class="profile-item">
-                    <h3>使用ツール</h3>
-                    <p>VSCode, Git, Docker, Gemini CLI, </p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="https://github.com/iDate-kun/" target="_blank">GitHub</a>
-                <!-- <a href="リンク後で書いて" target="_blank">Wantdly</a> -->
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Built with HTML, CSS, JavaScript</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <footer>
+            <p>Colony established with HTML, CSS, JavaScript</p>
+        </footer>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

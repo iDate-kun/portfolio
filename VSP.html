@@ -4,76 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iDate-kun - Cybercore Portfolio</title>
+    <title>VSP - RimWorld Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/rimworld.css">
     <link rel="icon" href="img/icon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="particles-js"></div>
-    <div class="loader">
-        <div class="loader-text">LOADING...</div>
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html">iDate-kun</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">戻る</a></li>
-            </ul>
-            <button id="theme-toggle">Toggle Theme</button>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <div class="container">
+        <header>
+            <div class="logo"><h1>iDate-kun's Colony</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">拠点に戻る</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="project-container main-content">
+            <h1 class="project-title">voicevox-serifu-player</h1>
+            <div class="tech-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">electron</span>
             </div>
-        </nav>
-    </header>
-    <main class="project-container">
-        <h1 class="project-title">voicevox-serifu-player</h1>
-        <div class="tech-tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">electron</span>
-        </div>
-        <div class="project-link">
-            <a href="https://github.com/iDate-kun/voicevox-serifu-player" target="_blank"
-                rel="noopener noreferrer">GitHub Repository</a>
-        </div>
+            <div class="project-link">
+                <a href="https://github.com/iDate-kun/voicevox-serifu-player" target="_blank"
+                    rel="noopener noreferrer">設計図 (GitHub Repository)</a>
+            </div>
 
-        <img src="img/VSPsukusyo.png" alt="voicevox-serifu-player screenshot" class="project-image">
+            <img src="img/VSPsukusyo.png" alt="voicevox-serifu-player screenshot" class="project-image">
 
-        <section id="description">
-            <h2>プロジェクト概要</h2>
-            <p class="project-description">
-                VOICEVOXのセリフを一気に生成するためのツールです。
-            </p>
-        </section>
+            <section id="description">
+                <h2>プロジェクト概要</h2>
+                <p class="project-description">
+                    VOICEVOXのセリフを一気に生成するための通信装置。
+                </p>
+            </section>
 
-        <section id="reason">
-            <h2>なぜ作ったか</h2>
-            <p>
-                VOICEVOXを使って動画を作成する際に、声優決めを簡単にしたかったため。
-            </p>
-        </section>
+            <section id="reason">
+                <h2>なぜ作ったか</h2>
+                <p>
+                    コロニーの入植者たちの間で、効率的に音声通信を行う必要があったため。
+                </p>
+            </section>
 
-        <section id="features">
-            <h2>主な機能</h2>
-            <ul>
-                <li>お気に入り登録</li>
-                <li>再生速度、ピッチの調整</li>
-            </ul>
-        </section>
+            <section id="features">
+                <h2>主な機能</h2>
+                <ul>
+                    <li>通信相手の登録</li>
+                    <li>通信速度、周波数の調整</li>
+                </ul>
+            </section>
 
-
-    </main>
-    <footer>
-        <p>&copy; 2025 iDate-kun</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        </main>
+        <footer>
+            <p>&copy; 2025 iDate-kun's Colony</p>
+        </footer>
+    </div>
     <script src="js/main.js"></script>
 </body>
 

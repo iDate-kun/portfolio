@@ -4,78 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Site - Cybercore Portfolio</title>
+    <title>Portfolio Site - RimWorld Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/rimworld.css">
     <link rel="icon" href="img/icon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="particles-js"></div>
-    <div class="loader">
-        <div class="loader-text">LOADING...</div>
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html">iDate-kun</a></div>
-            <ul class="nav-links">
-                <li><a href="index.html">戻る</a></li>
-            </ul>
-            <button id="theme-toggle">Toggle Theme</button>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <div class="container">
+        <header>
+            <div class="logo"><h1>iDate-kun's Colony</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">拠点に戻る</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="project-container main-content">
+            <h1 class="project-title">Portfolio Site</h1>
+            <div class="tech-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
             </div>
-        </nav>
-    </header>
-    <main class="project-container">
-        <h1 class="project-title">Portfolio Site</h1>
-        <div class="tech-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-        </div>
-        <div class="project-link">
-            <a href="https://github.com/iDate-kun/portfolio" target="_blank"
-                rel="noopener noreferrer">GitHub Repository</a>
-        </div>
+            <div class="project-link">
+                <a href="https://github.com/iDate-kun/portfolio" target="_blank"
+                    rel="noopener noreferrer">設計図 (GitHub Repository)</a>
+            </div>
 
-        <!-- <img src="img/VSPsukusyo.png" alt="Portfolio Site Screenshot" class="project-image"> -->
+            <section id="description">
+                <h2>プロジェクト概要</h2>
+                <p class="project-description">
+                    この拠点に関する情報をまとめたサイト。
+                </p>
+            </section>
 
-        <section id="description">
-            <h2>プロジェクト概要</h2>
-            <p class="project-description">
-                自身のスキルと制作物を紹介するために作成したポートフォリオサイトです。
-            </p>
-        </section>
+            <section id="reason">
+                <h2>なぜ作ったか</h2>
+                <p>
+                    これまでの調査記録をまとめ、コロニーの技術力を外部に示すために作成した。過酷な環境でも生き抜くためのデザインを追求した。
+                </p>
+            </section>
 
-        <section id="reason">
-            <h2>なぜ作ったか</h2>
-            <p>
-                これまでの学習の成果をまとめ、自身の技術力をアピールできる場として作成しました。デザインにもこだわり、見ていて楽しいサイトを目指しました。
-            </p>
-        </section>
+            <section id="features">
+                <h2>主な機能</h2>
+                <ul>
+                    <li>各種デバイスに対応 (レスポンシブデザイン)</li>
+                    <li>夜間モード/昼間モード切り替え</li>
+                    <li>サイバネティックなパーティクルエフェクト</li>
+                </ul>
+            </section>
 
-        <section id="features">
-            <h2>主な機能</h2>
-            <ul>
-                <li>レスポンシブデザイン</li>
-                <li>ダークモード/ライトモード切り替え</li>
-                <li>インタラクティブなパーティクルエフェクト</li>
-            </ul>
-        </section>
-
-
-    </main>
-    <footer>
-        <p>&copy; 2025 iDate-kun</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        </main>
+        <footer>
+            <p>&copy; 2025 iDate-kun's Colony</p>
+        </footer>
+    </div>
     <script src="js/main.js"></script>
 </body>
 
