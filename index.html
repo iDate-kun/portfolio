@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iDate-kun - RimWorld Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rimworld.css">
     <link rel="icon" href="img/icon.ico">
 </head>
@@ -22,112 +21,30 @@
 
     <div class="container">
         <main>
-            <section id="profile" class="main-content">
-                <div class="profile-grid">
-                    <!-- Left Panel -->
-                    <div class="panel">
-                        <h2>外観・基本情報</h2>
-                        <div style="display: grid; grid-template-columns: 140px 1fr; gap: 1rem;">
-                            <div class="avatar-box">
-                                <div class="avatar-placeholder">🧑‍🚀</div>
-                                <div class="avatar-caption">アバター</div>
-                            </div>
-                            <div>
-                                <div class="labeled-input">
-                                    <label>姓</label>
-                                    <input type="text" value="iDate" readonly>
-                                </div>
-                                <div class="labeled-input">
-                                    <label>名</label>
-                                    <input type="text" value="kun" readonly>
-                                </div>
-                                <div class="labeled-input">
-                                    <label>あだ名</label>
-                                    <input type="text" value="Date" readonly>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Center Panel -->
-                    <div class="panel">
-                        <h2>生い立ち / 才能・性格</h2>
-                        <div class="labeled-input">
-                            <label>幼少期</label>
-                            <input type="text" value="Urbworldのガキ" readonly>
-                        </div>
-                        <div class="labeled-input">
-                            <label>成人期</label>
-                            <input type="text" value="ハーブ栽培家" readonly>
-                        </div>
-                         <div class="labeled-input">
-                            <label>才能・性格</label>
-                            <input type="text" value="勤勉家, 良識の欠損" readonly>
-                        </div>
-                    </div>
-
-                    <!-- Right Panel -->
-                    <div class="panel">
-                        <h2>スキル</h2>
-                        <div class="skill-row">
-                            <span class="name">射撃</span>
-                            <input type="range" min="0" max="20" value="3" style="background: linear-gradient(90deg, var(--accent-soft) 15%, var(--border) 15%);">
-                            <span class="level">3</span>
-                            <button class="passion p-1">🔥</button>
-                        </div>
-                        <div class="skill-row">
-                            <span class="name">格闘</span>
-                            <input type="range" min="0" max="20" value="0" style="background: linear-gradient(90deg, var(--accent-soft) 0%, var(--border) 0%);">
-                            <span class="level">0</span>
-                            <button class="passion p-0">—</button>
-                        </div>
-                        <div class="skill-row">
-                            <span class="name">建築</span>
-                            <input type="range" min="0" max="20" value="12" style="background: linear-gradient(90deg, var(--accent-soft) 60%, var(--border) 60%);">
-                            <span class="level">12</span>
-                            <button class="passion p-2">🔥🔥</button>
-                        </div>
-                        <div class="skill-row">
-                            <span class="name">工芸</span>
-                            <input type="range" min="0" max="20" value="18" style="background: linear-gradient(90deg, var(--accent-soft) 90%, var(--border) 90%);">
-                            <span class="level">18</span>
-                            <button class="passion p-2">🔥🔥</button>
-                        </div>
-                        <div class="skill-row">
-                            <span class="name">研究</span>
-                            <input type="range" min="0" max="20" value="16" style="background: linear-gradient(90deg, var(--accent-soft) 80%, var(--border) 80%);">
-                            <span class="level">16</span>
-                            <button class="passion p-1">🔥</button>
-                        </div>
-                    </div>
-                </div>
+            <section id="profile" class="panel">
+                <div class="title">Profile</div>
+                <iframe id="profile-iframe" src="profile.html" style="width: 100%; border: none; background: transparent;" scrolling="no"></iframe>
             </section>
 
-            <section id="projects" class="main-content panel">
-                <h2>Projects</h2>
+            <section id="projects" class="panel">
+                <div class="title">Projects</div>
                 <div class="project-cards">
                     <div class="card" onclick="window.location.href='portfolio.html'">
-                        <div class="card-content">
-                            <h3>Portfolio Site</h3>
-                            <p>この拠点に関する情報をまとめたサイト。</p>
-                            <a href="https://github.com/iDate-kun/portfolio" class="button-link" target="_blank">設計図 (GitHub)</a>
-                        </div>
+                        <h3>Portfolio Site</h3>
+                        <p>この拠点に関する情報をまとめたサイト。</p>
+                        <a href="https://github.com/iDate-kun/portfolio" target="_blank">設計図 (GitHub)</a>
                     </div>
                     <div class="card" onclick="window.location.href='VSP.html'">
-                        <div class="card-content">
-                            <h3>VOICEVOXセリフプレイヤー</h3>
-                            <p>VOICEVOX用の通信装置。異なるキャラクターの声で一斉に通信できる。</p>
-                            <a href="https://github.com/iDate-kun/voicevox-serifu-player" class="button-link" target="_blank" onclick="event.stopPropagation()">設計図 (GitHub)</a>
-                        </div>
+                        <h3>VOICEVOXセリフプレイヤー</h3>
+                        <p>VOICEVOX用の通信装置。</p>
+                        <a href="https://github.com/iDate-kun/voicevox-serifu-player" target="_blank">設計図 (GitHub)</a>
                     </div>
                 </div>
             </section>
 
-            <section id="contact" class="main-content panel">
-                <h2>Contact</h2>
-                <div class="contact-links">
-                    <a href="https://github.com/iDate-kun/" target="_blank">通信コンソール (GitHub)</a>
-                </div>
+            <section id="contact" class="panel">
+                <div class="title">Contact</div>
+                <a href="https://github.com/iDate-kun/" target="_blank">通信コンソール (GitHub)</a>
             </section>
         </main>
 
@@ -135,6 +52,26 @@
             <p>Colony established with HTML, CSS, JavaScript</p>
         </footer>
     </div>
-    <script src="js/main.js"></script>
+    <!-- No JS needed for this static design -->
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+        const iframe = document.getElementById('profile-iframe');
+        iframe.onload = function() {
+            const setIframeSquare = () => {
+                iframe.style.height = iframe.offsetWidth + 'px';
+            };
+            // A short delay to ensure the iframe's width is correctly calculated
+            setTimeout(setIframeSquare, 100);
+            // Also resize on window resize
+            window.addEventListener('resize', setIframeSquare);
+        };
+    </script>
+</body>
+</html>
+, 100);
+            // Also resize on window resize to handle responsive changes inside the iframe
+            window.addEventListener('resize', setIframeHeight);
+        };
+    </script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #171a21; /* Match the card background for seamless embedding */
+            color: #e2e8f0;
+        }
+        .bg-dark-card { background-color: #171a21; }
+        .border-dark-border { border-color: #232735; }
+        .text-brand-green { color: #3ba55c; }
+        .bg-brand-green { background-color: #3ba55c; }
+        .hover\:border-brand-green:hover { border-color: #3ba55c; }
+        .focus\:border-brand-green:focus { border-color: #3ba55c; }
+        .bg-brand-purple { background-color: #6a5acd; }
+        .bg-brand-yellow-dark { background-color: rgba(234, 179, 8, 0.3); }
+        .text-brand-yellow-light { color: rgba(250, 233, 187, 0.9); }
+        .ring-dark-border { ring-color: #232735; }
+
+        /* Tooltip styles */
+        .tooltip-container { position: relative; display: inline-block; }
+        .tooltip-text { visibility: hidden; width: max-content; background-color: #1e232d; color: #e2e8f0; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 1; bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #232735; }
+        .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #1e232d transparent transparent transparent; }
+        .tooltip-container:hover .tooltip-text, .tooltip-container:focus-within .tooltip-text { visibility: visible; opacity: 1; }
+    </style>
+</head>
+<body style="background-color: transparent;">
+
+    <div id="profile-card-container" class="p-8 md:p-10">
+        <!-- Profile Card will be rendered here by JavaScript -->
+    </div>
+
+    <script>
+        // (The script content is the same as before)
+        const sampleCharacter = {
+            name: 'Bubble Fett',
+            gender: '女性',
+            age: 78,
+            birthYear: 1356,
+            faction: 'サングオファージ',
+            ideology: '木陰',
+            traits: [{ name: '同性愛者', description: '恋愛対象が同性になります。' }],
+            weaknesses: ['なし'],
+            childhood: '店番の子供',
+            adulthood: 'コーポレートマネージャ',
+            skills: [
+                { name: '射撃', value: 1, passion: 0 }, { name: '格闘', value: 5, passion: 0 },
+                { name: '建築', value: 3, passion: 0 }, { name: '採掘', value: 5, passion: 1 },
+                { name: '料理', value: 1, passion: 0 }, { name: '栽培', value: 5, passion: 0 },
+                { name: '動物', value: 11, passion: 2 }, { name: '工芸', value: 0, passion: 0 },
+                { name: '芸術', value: 0, passion: 0 }, { name: '医術', value: 1, passion: 0 },
+                { name: '社交', value: 18, passion: 2 }, { name: '知力', value: 12, passion: 2 },
+            ],
+            talents: [
+                { icon: '🐾', label: '調教の達人', description: '動物の調教成功率と速度が上がります。' },
+                { icon: '🩸', label: '吸血の適性', description: 'サングオファージ派閥の特殊能力です。' },
+                { icon: '🛡️', label: '護身術', description: '格闘スキルが5未満の場合、5として扱われます。' },
+            ],
+        };
+        const DEFAULT_SKILL_ORDER = ['社交', '知力', '医術', '動物', '栽培', '料理', '採掘', '建築', '格闘', '射撃', '工芸', '芸術'];
+        function getSkillBarColor(value) {
+            if (value >= 15) return 'bg-green-700'; if (value >= 10) return 'bg-green-600';
+            if (value >= 5) return 'bg-green-800'; return 'bg-gray-600';
+        }
+        function renderProfileCard(character, sortKey = 'default') {
+            const container = document.getElementById('profile-card-container');
+            const sortedSkills = [...character.skills];
+            if (sortKey === 'name') sortedSkills.sort((a, b) => a.name.localeCompare(b.name));
+            else if (sortKey === 'value') sortedSkills.sort((a, b) => b.value - a.value);
+            else sortedSkills.sort((a, b) => DEFAULT_SKILL_ORDER.indexOf(a.name) - DEFAULT_SKILL_ORDER.indexOf(b.name));
+            const Tooltip = (content, tooltipText) => `<div class="tooltip-container" tabindex="0">${content}<div class="tooltip-text">${tooltipText}</div></div>`;
+            const TagPill = (text, variant) => {
+                const variants = { faction: 'bg-brand-purple text-white', ideology: 'bg-green-800 text-green-100', trait: 'bg-gray-700 text-slate-200', weakness: 'bg-brand-yellow-dark text-brand-yellow-light' };
+                return `<div class="inline-block rounded-full px-3 py-1 text-sm font-semibold tracking-tight ${variants[variant]}">${text}</div>`;
+            };
+            const Icon = (content, label, description) => Tooltip(`<button aria-label="${label}" class="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-dark-border bg-dark-card transition-colors hover:border-brand-green focus:border-brand-green focus:outline-none"><span class="text-xl">${content}</span></button>`, description);
+            const SkillBar = (skill) => `<div class="grid grid-cols-3 items-center gap-4 font-mono text-sm"><div class="col-span-1 flex items-center"><span>${skill.name}</span><span class="ml-2 text-orange-400">${'🔥'.repeat(skill.passion)}</span></div><div class="col-span-2 flex items-center"><div class="relative h-5 flex-grow rounded-sm bg-dark-border"><div class="absolute left-0 top-0 h-full rounded-sm ${getSkillBarColor(skill.value)}" style="width: ${(skill.value / 20) * 100}%"></div><span class="absolute inset-0 flex items-center justify-center text-xs font-semibold text-white">${skill.value}</span></div></div></div>`;
+            container.innerHTML = `<div class="mx-auto w-full max-w-4xl rounded-2xl bg-dark-card"><div class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-3"><div class="md:col-span-1 flex flex-col gap-y-4"><div><h1 class="text-2xl font-semibold tracking-tight text-white">${character.name}</h1><p class="text-base text-slate-400">${character.adulthood}</p></div><div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-slate-300"><span>${character.gender}</span><span>${character.age}歳 ${character.birthYear ? `(${character.birthYear}年)` : ''}</span>${TagPill(character.faction, 'faction')}${character.ideology ? TagPill(character.ideology, 'ideology') : ''}</div><div><h2 class="mb-2 text-xs uppercase tracking-widest text-slate-400">特性</h2><div class="flex flex-wrap gap-2">${character.traits.map(trait => Icon('T', trait.name, trait.description)).join('')}</div></div><div class="space-y-1 text-sm"><div><span class="font-semibold text-slate-400">幼年期: </span><span class="text-slate-300">${character.childhood}</span></div><div><span class="font-semibold text-slate-400">成年期: </span><span class="text-slate-300">${character.adulthood}</span></div></div><div><h2 class="mb-2 text-xs uppercase tracking-widest text-slate-400">能力・性格</h2><div class="flex flex-wrap gap-2">${character.traits.map(trait => TagPill(trait.name, 'trait')).join('')}</div></div><div><h2 class="mb-2 text-xs uppercase tracking-widest text-slate-400">苦手・欠点</h2><div class="flex flex-wrap gap-2">${character.weaknesses.map(w => TagPill(w, 'weakness')).join('')}</div></div></div><div class="md:col-span-2"><div class="flex items-center justify-between"><h2 class="text-lg font-semibold text-white">スキル</h2><div class="flex items-center space-x-2"><label for="skill-sort" class="text-xs text-slate-400">ソート:</label><select id="skill-sort" class="rounded border-dark-border bg-dark-card text-sm text-white focus:ring-brand-green p-1"><option value="default" ${sortKey === 'default' ? 'selected' : ''}>デフォルト</option><option value="value" ${sortKey === 'value' ? 'selected' : ''}>値</option><option value="name" ${sortKey === 'name' ? 'selected' : ''}>名前</option></select></div></div><div class="mt-4 space-y-3">${sortedSkills.map(SkillBar).join('')}</div><div class="mt-6"><h2 class="mb-2 text-xs uppercase tracking-widest text-slate-400">才能</h2><div class="flex flex-wrap gap-2">${character.talents.map(t => Icon(t.icon, t.label, t.description)).join('')}</div></div></div></div></div>`;
+            document.getElementById('skill-sort').addEventListener('change', (e) => { renderProfileCard(character, e.target.value); });
+        }
+        document.addEventListener('DOMContentLoaded', () => { renderProfileCard(sampleCharacter); });
+    </script>
+
+</body>
+</html>
